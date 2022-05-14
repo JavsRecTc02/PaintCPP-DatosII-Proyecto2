@@ -19,17 +19,18 @@ DrawPanel::~DrawPanel() {}
 void DrawPanel::start()
 {
     drawPanel = QImage(this->size(), QImage::Format_RGB32);
-    drawPanel.fill(Qt::white);
-    setColor(Qt::black);
-    setFillColor(Qt::black);
-    setBrushWidth(1);
+    drawPanel.fill("white");
+    setColor("black");
+    setFillColor("black");
+    brushWidth = 5;
+    setBrushWidth(brushWidth);
     setPenStyle(Qt::SolidLine);
     setCapStyle(Qt::RoundCap);
     setJoinStyle(Qt::RoundJoin);
     setIsLine(true);
-    setIsCircle(false);
-    setIsTriangle(false);
-    setIsRectangle(false);
+    isCircle = false;
+    isRectangle = false;
+    isTriangle = false;
     setIsFilling(false);
     mousePressed = false;
 }
@@ -303,19 +304,9 @@ bool DrawPanel::getIsRectangle() const
     return isRectangle;
 }
 
-void DrawPanel::setIsRectangle(bool value)
-{
-    isRectangle = value;
-}
-
 bool DrawPanel::getIsCircle() const
 {
     return isCircle;
-}
-
-void DrawPanel::setIsCircle(bool value)
-{
-    isCircle = value;
 }
 
 bool DrawPanel::getIsTriangle() const
@@ -323,10 +314,6 @@ bool DrawPanel::getIsTriangle() const
     return isTriangle;
 }
 
-void DrawPanel::setIsTriangle(bool value)
-{
-    isTriangle = value;
-}
 
 bool DrawPanel::getIsLine() const
 {

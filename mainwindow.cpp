@@ -22,18 +22,6 @@ MainWindow::~MainWindow()
     delete drawpanel;
 }
 
-int MainWindow::openDialog()
-{
-    QMessageBox dialog(QMessageBox::Question, tr("PaintQT"), tr("Do you want to save changes?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, this);
-    dialog.setButtonText(QMessageBox::Yes, tr("Yes"));
-    dialog.setButtonText(QMessageBox::No, tr("No"));
-    dialog.setButtonText(QMessageBox::Cancel, tr("Cancel"));
-    dialog.setDefaultButton(QMessageBox::Yes);
-
-    return dialog.exec();
-}
-
-
 void MainWindow::on_color8_clicked()
 {
     drawpanel->setColor("violet");
@@ -84,5 +72,49 @@ void MainWindow::on_color1_clicked()
 void MainWindow::on_color6_clicked()
 {
     drawpanel->setColor("yellow");
+}
+
+
+void MainWindow::on_circle_clicked()
+{
+    drawpanel->isTriangle = false;
+    drawpanel->isRectangle = false;
+    drawpanel->isCircle = true;
+}
+
+
+void MainWindow::on_rectangle_clicked()
+{
+    drawpanel->isTriangle = false;
+    drawpanel->isRectangle = true;
+    drawpanel->isCircle = false;
+}
+
+
+void MainWindow::on_triangle_clicked()
+{
+   drawpanel->isTriangle = true;
+   drawpanel->isRectangle = false;
+   drawpanel->isCircle = false;
+}
+
+
+void MainWindow::on_draw_clicked()
+{
+    drawpanel->isTriangle = false;
+    drawpanel->isRectangle = false;
+    drawpanel->isCircle = false;
+}
+
+
+void MainWindow::on_increase_clicked()
+{
+    drawpanel->brushWidth ++;
+}
+
+
+void MainWindow::on_decrease_clicked()
+{
+    drawpanel->brushWidth --;
 }
 
