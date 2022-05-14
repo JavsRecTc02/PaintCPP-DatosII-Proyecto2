@@ -21,10 +21,6 @@ public:
 
     void start();
 
-    bool isRectangle;
-    bool isCircle;
-    bool isTriangle;
-
     bool openImage();
 
     QImage getImage();
@@ -34,9 +30,7 @@ public:
 
     void clear();
 
-
     void setBrushWidth (int setBrushWidth);
-    int brushWidth;
 
     void setColor(QColor setColor);
     QColor getColor();
@@ -54,13 +48,13 @@ public:
     void setJoinStyle(const Qt::PenJoinStyle &value);
 
     bool getIsRectangle() const;
-    //void setIsRectangle(bool value);
+    void setIsRectangle(bool value);
 
     bool getIsCircle() const;
-    //void setIsCircle(bool value);
+    void setIsCircle(bool value);
 
     bool getIsTriangle() const;
-    //void setIsTriangle(bool value);
+    void setIsTriangle(bool value);
 
     bool getIsLine() const;
     void setIsLine(bool value);
@@ -86,8 +80,11 @@ private:
     Qt::PenCapStyle capStyle;
     Qt::PenJoinStyle joinStyle;
 
+    int brushWidth;
     bool isDrawing;
-
+    bool isRectangle;
+    bool isCircle;
+    bool isTriangle;
     bool isLine;
     bool isFilling;
 
