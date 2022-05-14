@@ -24,8 +24,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    int openDialog();
-
 private:
     Ui::MainWindow *ui;
     DrawPanel *drawpanel;
@@ -44,6 +42,18 @@ private slots:
     void on_color3_clicked();
 
     void on_color1_clicked();
+
     void on_color6_clicked();
+
+
+    void on_circle_clicked();
+
+    void on_rectangle_clicked();
+
+    void on_triangle_clicked();
+
+    void on_draw_clicked();
+    void on_increase_clicked();
+    void on_decrease_clicked();
 };
 #endif // MAINWINDOW_H
