@@ -59,6 +59,7 @@ void DrawPanel::setImage(QImage image){
     drawPanel = image;
 }
 
+/////////////////////////////////////////////////////////////////////////////
 
 void DrawPanel::resize(int w, int h){
     QPixmap newImage(QSize(w, h));

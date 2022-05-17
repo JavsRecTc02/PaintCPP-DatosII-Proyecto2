@@ -6,10 +6,6 @@
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QMessageBox>
-//#include <resize.h>
-//#include <about.h>
-//#include <zoom.h>
-
 #include <QDebug>
 
 QT_BEGIN_NAMESPACE
@@ -26,11 +22,25 @@ public:
 
     bool fill_on;
 
+    int getZoom() const;
+
+    int width;
+    int height;
+
+    //int zoom;
+
 private:
     Ui::MainWindow *ui;
     DrawPanel *drawpanel;
 
 private slots:
+
+    int getWidth() const;
+    int getHeight() const;
+
+    void setWidth(int value);
+    void setHeight(int value);
+
 
     int openDialog();
 
@@ -65,5 +75,8 @@ private slots:
     void on_insert_clicked();
     void on_save_clicked();
     void on_close_clicked();
+    void on_zoom_clicked();
+
+    void on_resize_edit_clicked();
 };
 #endif // MAINWINDOW_H

@@ -44,9 +44,9 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>20</y>
-      <width>681</width>
-      <height>541</height>
+      <y>10</y>
+      <width>671</width>
+      <height>551</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2"/>
@@ -123,7 +123,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>380</y>
+      <y>370</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -136,7 +136,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>420</y>
+      <y>400</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -149,7 +149,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>460</y>
+      <y>430</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -162,7 +162,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>500</y>
+      <y>460</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -175,7 +175,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>530</y>
+      <y>490</y>
       <width>31</width>
       <height>24</height>
      </rect>
@@ -188,7 +188,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>530</y>
+      <y>490</y>
       <width>31</width>
       <height>24</height>
      </rect>
@@ -201,7 +201,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>530</y>
+      <y>490</y>
       <width>21</width>
       <height>21</height>
      </rect>
@@ -267,6 +267,62 @@ background: violet;
     </property>
     <property name="text">
      <string>Close</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zoom">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ZOOM</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="zoom_edit">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>40</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resize_edit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>520</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>RESIZE</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="height_edit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>550</y>
+      <width>31</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="weight_edit">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>550</y>
+      <width>31</width>
+      <height>24</height>
+     </rect>
     </property>
    </widget>
   </widget>
