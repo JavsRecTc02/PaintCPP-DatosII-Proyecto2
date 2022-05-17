@@ -254,6 +254,20 @@ void MainWindow::on_zoom_clicked()
 
 }
 
+
+void MainWindow::on_no_zoom_clicked()
+{
+    int zoom = getZoom();
+
+    int newW = drawpanel->getImage().width() / zoom / 100;
+    int newH = drawpanel->getImage().height() / zoom / 100;
+    QImage zoomedImage = drawpanel->getImage();
+    drawpanel->clear();
+    drawpanel->resize(newW, newH);
+    drawpanel->setImage(zoomedImage.scaled(newW, newH, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+}
+
+
 /////////////////////////////////////////////////////  resize   ///////////////////////////////////////////////
 
 void MainWindow::setHeight(int value)
@@ -292,4 +306,6 @@ void MainWindow::on_resize_edit_clicked()
     drawpanel->resize(nWidth, nHeight);
 
 }
+
+
 
