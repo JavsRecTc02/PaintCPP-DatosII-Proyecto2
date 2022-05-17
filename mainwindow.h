@@ -31,6 +31,9 @@ private:
     DrawPanel *drawpanel;
 
 private slots:
+
+    int openDialog();
+
     void on_color8_clicked();
 
     void on_color4_clicked();
@@ -59,5 +62,8 @@ private slots:
     void on_decrease_clicked();
 
     void on_fill_clicked();
+    void on_insert_clicked();
+    void on_save_clicked();
+    void on_close_clicked();
 };
 #endif // MAINWINDOW_H

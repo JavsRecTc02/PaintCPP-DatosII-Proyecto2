@@ -39,7 +39,7 @@ public:
     void setBrushWidth (int setBrushWidth);
     int brushWidth;
 
-    //QString fill_color;
+
     QColor getFillColor() const;
     void setFillColor(QColor setFillColor);
 
@@ -58,14 +58,11 @@ public:
     Qt::PenJoinStyle getJoinStyle() const;
     void setJoinStyle(const Qt::PenJoinStyle &value);
 
+
     bool getIsRectangle() const;
-    //void setIsRectangle(bool value);
-
     bool getIsCircle() const;
-    //void setIsCircle(bool value);
-
     bool getIsTriangle() const;
-    //void setIsTriangle(bool value);
+
 
     bool getIsLine() const;
     void setIsLine(bool value);

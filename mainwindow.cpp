@@ -176,3 +176,61 @@ void MainWindow::on_fill_clicked()
     drawpanel->setIsFilling(true);
 }
 
+
+int MainWindow::openDialog()
+{
+    QMessageBox dialog(QMessageBox::Question, tr("PaintQT"), tr("Do you want to save changes?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, this);
+    dialog.setButtonText(QMessageBox::Yes, tr("Yes"));
+    dialog.setButtonText(QMessageBox::No, tr("No"));
+    dialog.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+    dialog.setDefaultButton(QMessageBox::Yes);
+
+    return dialog.exec();
+}
+
+
+void MainWindow::on_insert_clicked()
+{
+    int dialog = openDialog();
+        if(dialog == QMessageBox::Yes)
+        {
+           on_save_clicked();
+           drawpanel->openImage();
+        }
+        else if(dialog == QMessageBox::No)
+        {
+            drawpanel->openImage();
+        }
+        else if(dialog == QMessageBox::Cancel)
+        {
+            return;
+        }
+}
+
+
+void MainWindow::on_save_clicked()
+{
+    QImage saveDrawing = drawpanel->getImage();
+    QString filePath = QFileDialog::getSaveFileName(this, "Save Image", "", "PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)");
+    saveDrawing.save(filePath);
+}
+
+
+void MainWindow::on_close_clicked()
+{
+    int dialog = openDialog();
+        if(dialog == QMessageBox::Yes)
+        {
+           on_save_clicked();
+           QApplication::quit();
+        }
+        else if(dialog == QMessageBox::No)
+        {
+            QApplication::quit();
+        }
+        else if(dialog == QMessageBox::Cancel)
+        {
+            return;
+        }
+}
+

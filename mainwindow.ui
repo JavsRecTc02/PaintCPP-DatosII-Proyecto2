@@ -43,9 +43,9 @@ background: violet;
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>20</y>
-      <width>691</width>
+      <width>681</width>
       <height>541</height>
      </rect>
     </property>
@@ -54,8 +54,8 @@ background: violet;
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>50</y>
+      <x>10</x>
+      <y>130</y>
       <width>38</width>
       <height>236</height>
      </rect>
@@ -123,8 +123,8 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>310</y>
-      <width>80</width>
+      <y>380</y>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -136,8 +136,8 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>350</y>
-      <width>80</width>
+      <y>420</y>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -149,8 +149,8 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>390</y>
-      <width>80</width>
+      <y>460</y>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -162,8 +162,8 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>430</y>
-      <width>80</width>
+      <y>500</y>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -175,7 +175,7 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>460</y>
+      <y>530</y>
       <width>31</width>
       <height>24</height>
      </rect>
@@ -187,8 +187,8 @@ background: violet;
    <widget class="QPushButton" name="decrease">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>460</y>
+      <x>70</x>
+      <y>530</y>
       <width>31</width>
       <height>24</height>
      </rect>
@@ -201,14 +201,14 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>490</y>
-      <width>49</width>
+      <y>530</y>
+      <width>21</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
       <italic>true</italic>
       <bold>true</bold>
      </font>
@@ -221,13 +221,52 @@ background: violet;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>100</y>
       <width>41</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
      <string>fill</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="insert">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Insert</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="save">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Close</string>
     </property>
    </widget>
   </widget>
