@@ -280,15 +280,15 @@ int MainWindow::getWidth() const
 void MainWindow::on_resize_edit_clicked()
 {
     //MainWindow resize;
-    setWidth(drawpanel->getImage().width());
+    //setWidth(drawpanel->getImage().width());
 
-    setHeight(drawpanel->getImage().height());
+    //setHeight(drawpanel->getImage().height());
 
     int nWidth = getWidth();
 
     int nHeight = getHeight();
 
-    //ui->verticalLayout_2->setSpacing(20);
+    ui->verticalLayout_2->setSpacing(20);
     drawpanel->resize(nWidth, nHeight);
 
 }
