@@ -21,7 +21,8 @@ void DrawPanel::start()
     drawPanel = QImage(this->size(), QImage::Format_RGB32);
     drawPanel.fill("white");
     setColor("black");
-    setFillColor("black");
+    setFillColor("white");
+    //fill_color = "black";
     brushWidth = 5;
     setBrushWidth(brushWidth);
     setPenStyle(Qt::SolidLine);
@@ -340,9 +341,9 @@ QColor DrawPanel::getFillColor() const
     return fillColor;
 }
 
-void DrawPanel::setFillColor(const QColor &value)
+void DrawPanel::setFillColor(QColor setFillColor)
 {
-    fillColor = value;
+    fillColor =  setFillColor;
 }
 
 QImage DrawPanel::getCopyDrawing() const

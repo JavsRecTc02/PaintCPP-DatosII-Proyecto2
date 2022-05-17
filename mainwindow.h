@@ -24,6 +24,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    bool fill_on;
+
 private:
     Ui::MainWindow *ui;
     DrawPanel *drawpanel;
@@ -55,5 +57,7 @@ private slots:
     void on_draw_clicked();
     void on_increase_clicked();
     void on_decrease_clicked();
+
+    void on_fill_clicked();
 };
 #endif // MAINWINDOW_H

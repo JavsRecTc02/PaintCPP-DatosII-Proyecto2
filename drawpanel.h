@@ -5,6 +5,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QFileDialog>
+#include <iostream>
 
 class DrawPanel : public QWidget
 {
@@ -38,6 +39,10 @@ public:
     void setBrushWidth (int setBrushWidth);
     int brushWidth;
 
+    //QString fill_color;
+    QColor getFillColor() const;
+    void setFillColor(QColor setFillColor);
+
     void setColor(QColor setColor);
     QColor getColor();
 
@@ -68,8 +73,6 @@ public:
     bool getIsFilling() const;
     void setIsFilling(bool value);
 
-    QColor getFillColor() const;
-    void setFillColor(const QColor &value);
 
     QImage getCopyDrawing() const;
     void setCopyDrawing(const QImage &value);
