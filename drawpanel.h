@@ -25,6 +25,8 @@ public:
     bool isRectangle;
     bool isCircle;
     bool isTriangle;
+    bool isLinerec;
+
 
     bool openImage();
 
@@ -62,6 +64,7 @@ public:
     bool getIsRectangle() const;
     bool getIsCircle() const;
     bool getIsTriangle() const;
+    bool getIsLinerec() const;
 
 
     bool getIsLine() const;

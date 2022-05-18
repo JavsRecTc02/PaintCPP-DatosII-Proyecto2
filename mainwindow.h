@@ -79,5 +79,6 @@ private slots:
 
     void on_resize_edit_clicked();
     void on_no_zoom_clicked();
+    void on_line_clicked();
 };
 #endif // MAINWINDOW_H

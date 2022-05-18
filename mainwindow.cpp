@@ -127,6 +127,7 @@ void MainWindow::on_circle_clicked()
     drawpanel->isTriangle = false;
     drawpanel->isRectangle = false;
     drawpanel->isCircle = true;
+    drawpanel->isLinerec = false;
 }
 
 
@@ -135,6 +136,7 @@ void MainWindow::on_rectangle_clicked()
     drawpanel->isTriangle = false;
     drawpanel->isRectangle = true;
     drawpanel->isCircle = false;
+    drawpanel->isLinerec = false;
 }
 
 
@@ -143,14 +145,24 @@ void MainWindow::on_triangle_clicked()
    drawpanel->isTriangle = true;
    drawpanel->isRectangle = false;
    drawpanel->isCircle = false;
+   drawpanel->isLinerec = false;
 }
 
+
+void MainWindow::on_line_clicked()
+{
+    drawpanel->isTriangle = false;
+    drawpanel->isRectangle = false;
+    drawpanel->isCircle = false;
+    drawpanel->isLinerec = true;
+}
 
 void MainWindow::on_draw_clicked()
 {
     drawpanel->isTriangle = false;
     drawpanel->isRectangle = false;
     drawpanel->isCircle = false;
+    drawpanel->isLinerec = false;
 }
 
 
@@ -306,6 +318,8 @@ void MainWindow::on_resize_edit_clicked()
     drawpanel->resize(nWidth, nHeight);
 
 }
+
+
 
 
 

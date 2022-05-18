@@ -27,11 +27,12 @@ void DrawPanel::start(){
     setPenStyle(Qt::SolidLine);
     setCapStyle(Qt::RoundCap);
     setJoinStyle(Qt::RoundJoin);
+    setIsFilling(false);
     setIsLine(true);
     isCircle = false;
     isRectangle = false;
     isTriangle = false;
-    setIsFilling(false);
+    isLinerec = false;
     mousePressed = false;
 }
 
@@ -168,6 +169,12 @@ void DrawPanel::paintEvent(QPaintEvent *event)
                 painter.fillPath(path,fillbrush);
             }
         }
+        else if (getIsLinerec())
+        {
+            QLine rect1 = QLine(firstPoint, lastPoint);
+            painter.setPen(QPen(currentColor,brushWidth,penStyle,capStyle,joinStyle));
+            painter.drawLine(rect1);
+        }
         else
         {
             QPainter pencilPainter(&drawPanel);
@@ -223,6 +230,12 @@ void DrawPanel::paintEvent(QPaintEvent *event)
                 path.addPolygon(polygon);
                 painter.fillPath(path,fillbrush);
             }
+        }
+        else if (getIsLinerec())
+        {
+            QLine rect1 = QLine(firstPoint, lastPoint);
+            painter.setPen(QPen(currentColor,brushWidth,penStyle,capStyle,joinStyle));
+            painter.drawLine(rect1);
         }
         else
         {
@@ -316,6 +329,13 @@ bool DrawPanel::getIsCircle() const
 bool DrawPanel::getIsTriangle() const
 {
     return isTriangle;
+
+}
+
+bool DrawPanel::getIsLinerec() const
+{
+    return isLinerec;
+
 }
 
 
