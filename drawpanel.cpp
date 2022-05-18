@@ -16,29 +16,30 @@ DrawPanel::DrawPanel(QWidget *parent) : QWidget(parent)
 DrawPanel::~DrawPanel() {}
 
 
-void DrawPanel::start()
-{
+void DrawPanel::start(){
+
     drawPanel = QImage(this->size(), QImage::Format_RGB32);
     drawPanel.fill("white");
     setColor("black");
     setFillColor("white");
-    //fill_color = "black";
     brushWidth = 5;
     setBrushWidth(brushWidth);
     setPenStyle(Qt::SolidLine);
     setCapStyle(Qt::RoundCap);
     setJoinStyle(Qt::RoundJoin);
+    setIsFilling(false);
     setIsLine(true);
     isCircle = false;
     isRectangle = false;
     isTriangle = false;
-    setIsFilling(false);
+    isLinerec = false;
     mousePressed = false;
 }
 
+////////////////////////////////////////////////////////////////////////////////////
 
-bool DrawPanel::openImage()
-{
+bool DrawPanel::openImage(){
+
      QString openImageLocation = QFileDialog::getOpenFileName(this, tr("Open image"), "", tr("PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)" ));
      if(!openImageLocation.isEmpty())
      {
@@ -51,6 +52,26 @@ bool DrawPanel::openImage()
      }
 }
 
+QImage DrawPanel::getImage(){
+    return drawPanel;
+}
+
+void DrawPanel::setImage(QImage image){
+    drawPanel = image;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+void DrawPanel::resize(int w, int h){
+    QPixmap newImage(QSize(w, h));
+    newImage.fill(Qt::white);
+    QPainter painter(&newImage);
+    painter.drawImage(QPoint(0, 0), drawPanel);
+    setImage(newImage.toImage());
+    update();
+}
+
+////////////////////////////////////////////////////////////////////////////
 
 void DrawPanel::mousePressEvent(QMouseEvent *event)
 {
@@ -86,6 +107,7 @@ void DrawPanel::mouseReleaseEvent(QMouseEvent *event)
     update();
 }
 
+////////////////////////////////////////////////////////////////////////////////////
 
 void DrawPanel::paintEvent(QPaintEvent *event)
 {
@@ -147,6 +169,12 @@ void DrawPanel::paintEvent(QPaintEvent *event)
                 painter.fillPath(path,fillbrush);
             }
         }
+        else if (getIsLinerec())
+        {
+            QLine rect1 = QLine(firstPoint, lastPoint);
+            painter.setPen(QPen(currentColor,brushWidth,penStyle,capStyle,joinStyle));
+            painter.drawLine(rect1);
+        }
         else
         {
             QPainter pencilPainter(&drawPanel);
@@ -203,6 +231,12 @@ void DrawPanel::paintEvent(QPaintEvent *event)
                 painter.fillPath(path,fillbrush);
             }
         }
+        else if (getIsLinerec())
+        {
+            QLine rect1 = QLine(firstPoint, lastPoint);
+            painter.setPen(QPen(currentColor,brushWidth,penStyle,capStyle,joinStyle));
+            painter.drawLine(rect1);
+        }
         else
         {
             painter.drawImage(dirtyRect, drawPanel, dirtyRect);
@@ -213,11 +247,11 @@ void DrawPanel::paintEvent(QPaintEvent *event)
     update();
 }
 
+////////////////////////////////////////////////////////////////////////////////////
 
 void DrawPanel::resizeEvent(QResizeEvent *event)
 {
-    if (width() != drawPanel.width() || height() != drawPanel.height())
-    {
+    if (width() != drawPanel.width() || height() != drawPanel.height()){
         int nWidth, nHeight;
 
         if (width() > drawPanel.width())
@@ -234,25 +268,7 @@ void DrawPanel::resizeEvent(QResizeEvent *event)
 }
 
 
-QImage DrawPanel::getImage()
-{
-    return drawPanel;
-}
-
-void DrawPanel::setImage(QImage image)
-{
-    drawPanel = image;
-}
-
-void DrawPanel::resize(int w, int h)
-{
-    QPixmap newImage(QSize(w, h));
-    newImage.fill(Qt::white);
-    QPainter painter(&newImage);
-    painter.drawImage(QPoint(0, 0), drawPanel);
-    setImage(newImage.toImage());
-    update();
-}
+////////////////////////////////////////////////////////////////////////////////////
 
 void DrawPanel::clear()
 {
@@ -313,6 +329,13 @@ bool DrawPanel::getIsCircle() const
 bool DrawPanel::getIsTriangle() const
 {
     return isTriangle;
+
+}
+
+bool DrawPanel::getIsLinerec() const
+{
+    return isLinerec;
+
 }
 
 
