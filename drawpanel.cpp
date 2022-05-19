@@ -77,6 +77,7 @@ void DrawPanel::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
+        imagen12 = getImage();
         firstPoint = event->pos();
         lastPoint = event->pos();
 
@@ -92,6 +93,7 @@ void DrawPanel::mouseMoveEvent(QMouseEvent *event)
     if ((event->buttons() & Qt::LeftButton) && isDrawing)
     {
         lastPoint = event->pos();
+
     }
     update();
 }
@@ -103,6 +105,7 @@ void DrawPanel::mouseReleaseEvent(QMouseEvent *event)
     {
         isDrawing = false;
         mousePressed = false;
+        //imagen12 = getImage();
     }
     update();
 }

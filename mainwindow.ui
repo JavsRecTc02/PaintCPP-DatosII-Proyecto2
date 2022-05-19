@@ -1639,6 +1639,32 @@ background:rgb#47006b;
      </property>
     </widget>
    </widget>
+   <widget class="QPushButton" name="undo">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>50</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;-----</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="redo">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>50</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-----&gt;</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
