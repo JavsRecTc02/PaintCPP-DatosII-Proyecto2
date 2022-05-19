@@ -421,6 +421,20 @@ void MainWindow::on_resize_edit_clicked()
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 
+void MainWindow::on_undo_clicked()
+{
+    imageredo = drawpanel->drawPanel;
+    QImage backnw = drawpanel->imagen12;
+    drawpanel->drawPanel = backnw;
+}
+
+
+void MainWindow::on_redo_clicked()
+{
+    drawpanel->drawPanel = imageredo;
+    //imageredo = drawpanel->imagen12;
+}
 

@@ -26,6 +26,8 @@ public:
     bool isCircle;
     bool isTriangle;
     bool isLinerec;
+    QImage drawPanel;
+    QImage imagen12;
 
 
     bool openImage();
@@ -78,7 +80,7 @@ public:
     void setCopyDrawing(const QImage &value);
 
 private:
-    QImage drawPanel;
+
     QImage copyDrawing;
     QPoint lastPoint;
     QPoint firstPoint;

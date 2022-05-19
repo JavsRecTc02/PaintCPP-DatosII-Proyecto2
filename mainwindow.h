@@ -28,6 +28,7 @@ public:
     int height;
 
     //int zoom;
+    QImage imageredo;
 
 private:
     Ui::MainWindow *ui;
@@ -100,5 +101,7 @@ private slots:
     void on_resize_edit_clicked();
     void on_no_zoom_clicked();
     void on_line_clicked();
+    void on_undo_clicked();
+    void on_redo_clicked();
 };
 #endif // MAINWINDOW_H
