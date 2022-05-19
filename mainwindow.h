@@ -60,6 +60,26 @@ private slots:
 
     void on_color6_clicked();
 
+    void on_color9_clicked();
+
+    void on_color10_clicked();
+
+    void on_color11_clicked();
+
+    void on_color12_clicked();
+
+    void on_color13_clicked();
+
+    void on_color14_clicked();
+
+    void on_color15_clicked();
+
+    void on_color16_clicked();
+
+    void on_color17_clicked();
+
+    void on_color18_clicked();
+
 
     void on_circle_clicked();
 
