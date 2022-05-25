@@ -36,6 +36,14 @@ void DrawPanel::start(){
     mousePressed = false;
 }
 
+/////////////////////////////////////// rotation ///////////////////////////////////
+
+void DrawPanel::rotation(){
+    QTransform tr;
+    tr.rotate(90);
+    drawPanel = drawPanel.transformed(tr);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 bool DrawPanel::openImage(){

@@ -105,5 +105,6 @@ private slots:
     void on_undo_clicked();
     void on_redo_clicked();
     void on_deleteAcc_clicked();
+    void on_rotation_clicked();
 };
 #endif // MAINWINDOW_H

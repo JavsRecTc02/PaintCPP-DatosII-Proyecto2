@@ -16,5 +16,6 @@
         <file>lessIcon.png</file>
         <file>plusIcon.png</file>
         <file>deleteIcon.png</file>
+        <file>rotationIcon.png</file>
     </qresource>
 </RCC>

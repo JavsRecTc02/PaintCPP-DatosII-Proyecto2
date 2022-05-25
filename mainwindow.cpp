@@ -296,6 +296,8 @@ void MainWindow::on_fill_clicked()
 }
 
 
+/////////////////////////////////////////////////// functions image ////////////////////////////////////
+
 int MainWindow::openDialog()
 {
     QMessageBox dialog(QMessageBox::Question, tr("PaintQT"), tr("Do you want to save changes?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, this);
@@ -455,5 +457,11 @@ void MainWindow::on_deleteAcc_clicked()
     drawpanel->isLinerec = false;
     drawpanel->setColor("white");
 
+}
+
+
+void MainWindow::on_rotation_clicked()
+{
+    drawpanel->rotation();
 }
 

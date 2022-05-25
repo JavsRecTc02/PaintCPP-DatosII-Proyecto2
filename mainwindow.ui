@@ -1744,6 +1744,23 @@ background-color: rgb(255, 255, 255);</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="rotation">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>50</y>
+      <width>34</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/rotationIcon.png);
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

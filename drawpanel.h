@@ -28,6 +28,9 @@ public:
     bool isLinerec;
     QImage drawPanel;
     QImage imagen12;
+
+    void rotation();
+
     QColor currentColor;
     QColor prevColor;
 
