@@ -28,6 +28,8 @@ public:
     bool isLinerec;
     QImage drawPanel;
     QImage imagen12;
+    QColor currentColor;
+    QColor prevColor;
 
 
     bool openImage();
@@ -83,9 +85,7 @@ private:
 
     QImage copyDrawing;
     QPoint lastPoint;
-    QPoint firstPoint;
-    QColor currentColor;
-    QColor prevColor;
+    QPoint firstPoint;    
     QColor fillColor;
     Qt::PenStyle penStyle;
     Qt::PenCapStyle capStyle;

@@ -15,5 +15,6 @@
         <file>saveIcon.png</file>
         <file>lessIcon.png</file>
         <file>plusIcon.png</file>
+        <file>deleteIcon.png</file>
     </qresource>
 </RCC>

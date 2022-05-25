@@ -193,7 +193,6 @@ background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="font">
      <font>
-      <family>Arial Rounded MT Bold</family>
       <pointsize>18</pointsize>
       <italic>false</italic>
       <bold>false</bold>
@@ -1722,6 +1721,23 @@ background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-image: url(:/circleIcon.png);
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteAcc">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>34</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/deleteIcon.png);
 background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">

@@ -28,6 +28,7 @@ public:
     int height;
 
     //int zoom;
+    QString back_color = "white";
     QImage imageredo;
 
 private:
@@ -103,5 +104,6 @@ private slots:
     void on_line_clicked();
     void on_undo_clicked();
     void on_redo_clicked();
+    void on_deleteAcc_clicked();
 };
 #endif // MAINWINDOW_H

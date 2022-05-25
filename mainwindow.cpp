@@ -229,6 +229,7 @@ void MainWindow::on_circle_clicked()
     drawpanel->isRectangle = false;
     drawpanel->isCircle = true;
     drawpanel->isLinerec = false;
+    drawpanel->setColor("black");
 }
 
 
@@ -238,6 +239,7 @@ void MainWindow::on_rectangle_clicked()
     drawpanel->isRectangle = true;
     drawpanel->isCircle = false;
     drawpanel->isLinerec = false;
+    drawpanel->setColor("black");
 }
 
 
@@ -247,6 +249,7 @@ void MainWindow::on_triangle_clicked()
    drawpanel->isRectangle = false;
    drawpanel->isCircle = false;
    drawpanel->isLinerec = false;
+   drawpanel->setColor("black");
 }
 
 
@@ -256,6 +259,7 @@ void MainWindow::on_line_clicked()
     drawpanel->isRectangle = false;
     drawpanel->isCircle = false;
     drawpanel->isLinerec = true;
+    drawpanel->setColor("black");
 }
 
 void MainWindow::on_draw_clicked()
@@ -264,6 +268,8 @@ void MainWindow::on_draw_clicked()
     drawpanel->isRectangle = false;
     drawpanel->isCircle = false;
     drawpanel->isLinerec = false;
+    drawpanel->setColor("black");
+
 }
 
 
@@ -436,5 +442,18 @@ void MainWindow::on_redo_clicked()
 {
     drawpanel->drawPanel = imageredo;
     //imageredo = drawpanel->imagen12;
+}
+
+///////////////////////////////// DELETE ////////////////////////////////////////////////
+
+
+void MainWindow::on_deleteAcc_clicked()
+{
+    drawpanel->isTriangle = false;
+    drawpanel->isRectangle = false;
+    drawpanel->isCircle = false;
+    drawpanel->isLinerec = false;
+    drawpanel->setColor("white");
+
 }
 
