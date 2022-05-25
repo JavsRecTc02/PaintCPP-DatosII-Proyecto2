@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>circleIcon.png</file>
+        <file>rectangleIcon.png</file>
+        <file>triangleIcon.png</file>
+        <file>drawIcon.png</file>
+        <file>fillIcon.png</file>
+        <file>lineIcon.png</file>
+        <file>zoom-.png</file>
+        <file>zoom+.png</file>
+        <file>redoIcon.png</file>
+        <file>undoIcon.png</file>
+        <file>closeIcon.png</file>
+        <file>insertIcon.png</file>
+        <file>saveIcon.png</file>
+        <file>lessIcon.png</file>
+        <file>plusIcon.png</file>
+    </qresource>
+</RCC>
