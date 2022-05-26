@@ -22,6 +22,8 @@ MainWindow::~MainWindow()
     delete drawpanel;
 }
 
+///////////////////////////////////////////// COLORS ///////////////////////////////////////////
+
 void MainWindow::on_color8_clicked()
 {
     if (fill_on == true){
@@ -221,7 +223,7 @@ void MainWindow::on_color18_clicked()
     drawpanel->setColor("#47006b");
 }
 
-
+//////////////////////////////////////// FIGURES BOTTON ///////////////////////////////////////////////
 
 void MainWindow::on_circle_clicked()
 {
@@ -296,7 +298,7 @@ void MainWindow::on_fill_clicked()
 }
 
 
-/////////////////////////////////////////////////// functions image ////////////////////////////////////
+/////////////////////////////////////////////////// Functions image ////////////////////////////////////
 
 int MainWindow::openDialog()
 {
@@ -356,6 +358,7 @@ void MainWindow::on_close_clicked()
 }
 
 ////////////////////////////////////////////////////////////// zoom /////////////////////////////////////////////
+//Metodos configurar el zoom insertado por el usuario
 
 int MainWindow::getZoom() const
 {
@@ -390,7 +393,7 @@ void MainWindow::on_no_zoom_clicked()
 
 
 /////////////////////////////////////////////////////  resize   ///////////////////////////////////////////////
-
+//Metodos para configurar la resolucion dada por el usuario
 void MainWindow::setHeight(int value)
 {
     ui->height_edit->setText(QString::number(value));
@@ -414,11 +417,6 @@ int MainWindow::getWidth() const
 
 void MainWindow::on_resize_edit_clicked()
 {
-    //MainWindow resize;
-    //setWidth(drawpanel->getImage().width());
-
-    //setHeight(drawpanel->getImage().height());
-
     int nWidth = getWidth();
 
     int nHeight = getHeight();
@@ -429,8 +427,8 @@ void MainWindow::on_resize_edit_clicked()
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////
-
+//////////////////////////////////////// Undo-Redo  //////////////////////////////////////////
+//Metodos para revertir y adelantar los pasos del usuario
 
 void MainWindow::on_undo_clicked()
 {
@@ -460,6 +458,7 @@ void MainWindow::on_deleteAcc_clicked()
 }
 
 
+////////////////////////////////// ROTATE ////////////////////////////////////////////
 void MainWindow::on_rotation_clicked()
 {
     drawpanel->rotation();

@@ -10,12 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     drawpanel.cpp \
+    figures.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    resize.cpp \
+    saveinsert.cpp
 
 HEADERS += \
     drawpanel.h \
-    mainwindow.h
+    figures.h \
+    mainwindow.h \
+    resize.h \
+    saveinsert.h
 
 FORMS += \
     mainwindow.ui

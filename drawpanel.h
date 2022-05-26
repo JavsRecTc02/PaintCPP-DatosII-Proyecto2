@@ -18,6 +18,7 @@ public:
     virtual void mouseMoveEvent(QMouseEvent *event) override;
     virtual void mouseReleaseEvent(QMouseEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
+    void resize(int w, int h);
     virtual void resizeEvent(QResizeEvent *event) override;
 
     void start();
@@ -40,7 +41,7 @@ public:
     QImage getImage();
     void setImage(QImage image);
 
-    void resize(int w, int h);
+
 
     void clear();
 
