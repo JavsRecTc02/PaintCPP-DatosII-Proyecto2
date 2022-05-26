@@ -15,9 +15,10 @@ DrawPanel::DrawPanel(QWidget *parent) : QWidget(parent)
 
 DrawPanel::~DrawPanel() {}
 
+//////////////////////////// START APP VOID ////////////////////////////////////////
 
-void DrawPanel::start(){
-
+void DrawPanel::start()
+{
     drawPanel = QImage(this->size(), QImage::Format_RGB32);
     drawPanel.fill("white");
     setColor("black");
@@ -36,15 +37,8 @@ void DrawPanel::start(){
     mousePressed = false;
 }
 
-/////////////////////////////////////// rotation ///////////////////////////////////
 
-void DrawPanel::rotation(){
-    QTransform tr;
-    tr.rotate(90);
-    drawPanel = drawPanel.transformed(tr);
-}
-
-////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// MOUSE EVENTS //////////////////////////////////
 
 void DrawPanel::mousePressEvent(QMouseEvent *event)
 {
@@ -84,13 +78,16 @@ void DrawPanel::mouseReleaseEvent(QMouseEvent *event)
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////// CLEAR WIDGET /////////////////////////////////////////
 
 void DrawPanel::clear()
 {
-    drawPanel.fill(Qt::white);
+    drawPanel.fill("white");
     update();
 }
+
+
+//////////////////////////////// ASSIGNMENT VOIDS ////////////////////////////////////////
 
 QColor DrawPanel::getPrevColor() const
 {

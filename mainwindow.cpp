@@ -22,8 +22,9 @@ MainWindow::~MainWindow()
     delete drawpanel;
 }
 
-///////////////////////////////////////////// COLORS ///////////////////////////////////////////
+///////////////////////////////////////////// COLORS VOID ///////////////////////////////////////////
 
+//Metodos para que el usuario pueda seleccionar los distintos colores
 void MainWindow::on_color8_clicked()
 {
     if (fill_on == true){
@@ -223,8 +224,9 @@ void MainWindow::on_color18_clicked()
     drawpanel->setColor("#47006b");
 }
 
-//////////////////////////////////////// FIGURES BOTTON ///////////////////////////////////////////////
+//////////////////////////////////////// FIGURES BUTTONS ///////////////////////////////////////////////
 
+//Metodo para que el usuario seleccione el circulo
 void MainWindow::on_circle_clicked()
 {
     drawpanel->isTriangle = false;
@@ -234,7 +236,7 @@ void MainWindow::on_circle_clicked()
     drawpanel->setColor("black");
 }
 
-
+//Metodo para que el usuario seleccione el rectangulo
 void MainWindow::on_rectangle_clicked()
 {
     drawpanel->isTriangle = false;
@@ -244,7 +246,7 @@ void MainWindow::on_rectangle_clicked()
     drawpanel->setColor("black");
 }
 
-
+//Metodo para que el usuario seleccione el triangulo
 void MainWindow::on_triangle_clicked()
 {
    drawpanel->isTriangle = true;
@@ -254,7 +256,7 @@ void MainWindow::on_triangle_clicked()
    drawpanel->setColor("black");
 }
 
-
+//Metodo para que el usuario seleccione la linea recta
 void MainWindow::on_line_clicked()
 {
     drawpanel->isTriangle = false;
@@ -264,6 +266,7 @@ void MainWindow::on_line_clicked()
     drawpanel->setColor("black");
 }
 
+//Metodo para que el usuario seleccione el lapiz
 void MainWindow::on_draw_clicked()
 {
     drawpanel->isTriangle = false;
@@ -274,7 +277,9 @@ void MainWindow::on_draw_clicked()
 
 }
 
+//////////////////////////////// FOUNT ADJUST VOID /////////////////////////////////
 
+//Metodo para que el usuario pueda aumentar el ancho del borde o lapiz
 void MainWindow::on_increase_clicked()
 {
     drawpanel->brushWidth ++;
@@ -282,7 +287,7 @@ void MainWindow::on_increase_clicked()
     ui->found_size->setText(QString::number(foundsize));
 }
 
-
+//Metodo para que el usuario pueda dismunuir el ancho del borde o lapiz
 void MainWindow::on_decrease_clicked()
 {
     drawpanel->brushWidth --;
@@ -290,7 +295,9 @@ void MainWindow::on_decrease_clicked()
     ui->found_size->setText(QString::number(foundsize));
 }
 
+///////////////////////////// FILL CHECKER VOID ////////////////////////////////////
 
+//Metodo para que el usuario utilize la funcion de pintar
 void MainWindow::on_fill_clicked()
 {
     fill_on = true;
@@ -298,8 +305,9 @@ void MainWindow::on_fill_clicked()
 }
 
 
-/////////////////////////////////////////////////// Functions image ////////////////////////////////////
+////////////////////////////////// IMAGES FUNCTIONS /////////////////////////////////
 
+//Metodo que crea la caja de texto indicadora para guardar/cargar imagenes o salir del programa
 int MainWindow::openDialog()
 {
     QMessageBox dialog(QMessageBox::Question, tr("PaintQT"), tr("Do you want to save changes?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, this);
@@ -311,7 +319,7 @@ int MainWindow::openDialog()
     return dialog.exec();
 }
 
-
+//Metodo para insetar una imagen al widget
 void MainWindow::on_insert_clicked()
 {
     int dialog = openDialog();
@@ -330,7 +338,7 @@ void MainWindow::on_insert_clicked()
         }
 }
 
-
+//Metodo para guardar la imagen actual del widget
 void MainWindow::on_save_clicked()
 {
     QImage saveDrawing = drawpanel->getImage();
@@ -338,7 +346,7 @@ void MainWindow::on_save_clicked()
     saveDrawing.save(filePath);
 }
 
-
+//Metodo para cerrar el programa
 void MainWindow::on_close_clicked()
 {
     int dialog = openDialog();
@@ -357,7 +365,7 @@ void MainWindow::on_close_clicked()
         }
 }
 
-////////////////////////////////////////////////////////////// zoom /////////////////////////////////////////////
+////////////////////////////////////////////// ZOOM VOIDS /////////////////////////////////////////////
 //Metodos configurar el zoom insertado por el usuario
 
 int MainWindow::getZoom() const
@@ -365,6 +373,7 @@ int MainWindow::getZoom() const
     return ui->zoom_edit->text().toInt();
 }
 
+//Metodo para incrementar el zoom
 void MainWindow::on_zoom_clicked()
 {
     int zoom = getZoom();
@@ -378,7 +387,7 @@ void MainWindow::on_zoom_clicked()
 
 }
 
-
+//Metodo para dismunuir el zoom
 void MainWindow::on_no_zoom_clicked()
 {
     int zoom = getZoom();
@@ -392,8 +401,9 @@ void MainWindow::on_no_zoom_clicked()
 }
 
 
-/////////////////////////////////////////////////////  resize   ///////////////////////////////////////////////
-//Metodos para configurar la resolucion dada por el usuario
+/////////////////////////////////////////////////////  RESIZE VOIDS   ///////////////////////////////////////////////
+
+//Metodos para configurar el ancho y altura dado por el usuario
 void MainWindow::setHeight(int value)
 {
     ui->height_edit->setText(QString::number(value));
@@ -414,7 +424,7 @@ int MainWindow::getWidth() const
     return ui->weight_edit->text().toInt();
 }
 
-
+//Metodo para cambiar la resolucion actual
 void MainWindow::on_resize_edit_clicked()
 {
     int nWidth = getWidth();
@@ -427,9 +437,9 @@ void MainWindow::on_resize_edit_clicked()
 }
 
 
-//////////////////////////////////////// Undo-Redo  //////////////////////////////////////////
-//Metodos para revertir y adelantar los pasos del usuario
+//////////////////////////////////////// UNDO-REDO VOIDS  //////////////////////////////////////////
 
+//Metodo para que el usuario pueda regresar al paso anterior
 void MainWindow::on_undo_clicked()
 {
     imageredo = drawpanel->drawPanel;
@@ -437,16 +447,15 @@ void MainWindow::on_undo_clicked()
     drawpanel->drawPanel = backnw;
 }
 
-
+//Metodo para que el usuario pueda regresar al paso siguiente
 void MainWindow::on_redo_clicked()
 {
     drawpanel->drawPanel = imageredo;
-    //imageredo = drawpanel->imagen12;
 }
 
-///////////////////////////////// DELETE ////////////////////////////////////////////////
+///////////////////////////////// DELETE VOID ////////////////////////////////////////////////
 
-
+//Metodo para que el mouse funcione en forma de borrador
 void MainWindow::on_deleteAcc_clicked()
 {
     drawpanel->isTriangle = false;
@@ -458,7 +467,8 @@ void MainWindow::on_deleteAcc_clicked()
 }
 
 
-////////////////////////////////// ROTATE ////////////////////////////////////////////
+////////////////////////////////// ROTATE VOID ////////////////////////////////////////////
+//Metodo para activar la rotacion de imagen
 void MainWindow::on_rotation_clicked()
 {
     drawpanel->rotation();

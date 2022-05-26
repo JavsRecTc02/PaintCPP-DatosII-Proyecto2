@@ -40,3 +40,11 @@ void DrawPanel::resize(int w, int h)
     update();
 }
 
+/////////////////////////////////////// rotation ///////////////////////////////////
+
+void DrawPanel::rotation(){
+    QTransform tr;
+    tr.rotate(90);
+    drawPanel = drawPanel.transformed(tr);
+}
+
