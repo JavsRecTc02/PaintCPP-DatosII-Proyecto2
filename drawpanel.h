@@ -7,6 +7,8 @@
 #include <QFileDialog>
 #include <iostream>
 
+using namespace std;
+
 class DrawPanel : public QWidget
 {
     Q_OBJECT

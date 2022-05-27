@@ -374,6 +374,7 @@ int MainWindow::getZoom() const
 }
 
 //Metodo para incrementar el zoom
+//value 100-200
 void MainWindow::on_zoom_clicked()
 {
     int zoom = getZoom();
@@ -383,21 +384,22 @@ void MainWindow::on_zoom_clicked()
     QImage zoomedImage = drawpanel->getImage();
     drawpanel->clear();
     drawpanel->resize(newW, newH);
-    drawpanel->setImage(zoomedImage.scaled(newW, newH, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    drawpanel->setImage(zoomedImage.scaled(newW, newH));
 
 }
-
+//, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)
 //Metodo para dismunuir el zoom
+// value 20-100
 void MainWindow::on_no_zoom_clicked()
 {
     int zoom = getZoom();
 
-    int newW = drawpanel->getImage().width() / zoom / 100;
-    int newH = drawpanel->getImage().height() / zoom / 100;
+    int newW = drawpanel->getImage().width() * zoom / 100;
+    int newH = drawpanel->getImage().height() * zoom / 100;
     QImage zoomedImage = drawpanel->getImage();
     drawpanel->clear();
     drawpanel->resize(newW, newH);
-    drawpanel->setImage(zoomedImage.scaled(newW, newH, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    drawpanel->setImage(zoomedImage.scaled(newW, newH));
 }
 
 
