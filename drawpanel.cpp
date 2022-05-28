@@ -5,6 +5,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QFileDialog>
 
 
 DrawPanel::DrawPanel(QWidget *parent) : QWidget(parent)
