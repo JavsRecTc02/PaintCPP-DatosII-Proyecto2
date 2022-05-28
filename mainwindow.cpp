@@ -343,7 +343,7 @@ void MainWindow::on_insert_clicked()
 void MainWindow::on_save_clicked()
 {
     QImage saveDrawing = drawpanel->getImage();
-    QString filePath = QFileDialog::getSaveFileName(this, tr("Save Image"),QDir::currentPath() + ".png",tr(".png"),0,QFileDialog::DontUseNativeDialog);
+    QString filePath = QFileDialog::getSaveFileName(this, tr("Save Image"),QDir::currentPath() + ".bmp",tr(".bmp"),0,QFileDialog::DontUseNativeDialog);
     saveDrawing.save(filePath);
 }
 

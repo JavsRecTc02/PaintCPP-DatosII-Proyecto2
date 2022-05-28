@@ -10,7 +10,7 @@ SaveInsert::SaveInsert(QWidget *parent)
 //Metodo para guardar y abrir la carpeta de destino de la imagen
 bool DrawPanel::openImage()
 {
-     QString openImageLocation = QFileDialog::getOpenFileName(this, tr("Open Image"),QDir::currentPath() + ".png",tr("Images Files (*.png *.jpg *.bmp)"),0,QFileDialog::DontUseNativeDialog);
+     QString openImageLocation = QFileDialog::getOpenFileName(this, tr("Open Image"),QDir::currentPath() + ".png",tr("Images Files (*.bmp)"),0,QFileDialog::DontUseNativeDialog);
      if(!openImageLocation.isEmpty())
      {
         drawPanel.load(openImageLocation);
